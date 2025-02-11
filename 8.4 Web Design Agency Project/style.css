@@ -54,6 +54,7 @@ div > p {
   .card{
     display: block;
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .tile-image{
@@ -73,5 +74,9 @@ div > p {
 
   .left, .right{
     float: unset;
+  }
+
+  div > p{
+    text-align: justify;
   }
 }
