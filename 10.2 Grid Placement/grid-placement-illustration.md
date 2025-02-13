@@ -1,1 +1,4 @@
 ![grid placement](image.png)
+///////////////////////////////////////////////////////////////////////////////////////////////
+!['grid column' property condensed](image-1.png)
+!['grid column' property expanded](image-2.png)
