@@ -1,0 +1,1 @@
+![bootstrap breakpoints for screen size ranges](image.png)
