@@ -1,1 +1,6 @@
 ![bootstrap breakpoints for screen size ranges](image.png)
+///////////////////////////////////////////////////////////////////////////////////////////////
+Multiple Breakpoints
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
