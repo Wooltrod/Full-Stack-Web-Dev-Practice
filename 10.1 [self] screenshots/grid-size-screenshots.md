@@ -3,3 +3,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ![screenshot of CSS Grid Sizing Exercise task](image-2.png)
 ![screenshot of solution code for screenshot of CSS Grid Sizing Exercise task](image-3.png)
+.grid-container {
+ display: grid;
+grid-template-columns: auto 400px minmax(200px, 500px);
+grid-template-rows: 1fr 1fr 2fr;
+grid-auto-rows: 50px;
+}
+  
