@@ -10,3 +10,6 @@
 /////////////////////
 14.9
 ![concatenation](image-5.png)
+/////////////////////
+14.10
+![string length exercise](image-6.png)
