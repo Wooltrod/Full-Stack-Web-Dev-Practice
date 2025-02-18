@@ -27,3 +27,8 @@ givenName.slice(2,6); //output is "gela"
 givenName.slice(3,6); //output is "ela"
 givenName.slice(4,6); //output is "la"
 givenName.slice(5,6); //output is "a"
+
+//string slicing [twitter implementation]
+var input = prompt("write in your text");
+var tweet = input.slice(0,139);
+alert("Your tweet is: " + tweet + ". " + (input.length - tweet.length) + " characters were removed from your tweet.");
