@@ -13,3 +13,6 @@
 /////////////////////
 14.10
 ![string length exercise](image-6.png)
+/////////////////////
+14.11
+![my solution code for string slicing](image-7.png)
