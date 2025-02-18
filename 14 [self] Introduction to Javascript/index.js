@@ -10,3 +10,6 @@ var b = temp;
 console.log("a is " + a);
 console.log("b is " + b);
 
+//string lengths (twitter character counter)
+var input = prompt("write in your text");
+console.log("you have written " + input.length + " characters, you have " + (140 - input.length) + " characters left");
