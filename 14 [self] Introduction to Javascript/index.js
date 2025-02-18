@@ -16,11 +16,11 @@ console.log("you have written " + input.length + " characters, you have " + (140
 
 //string slicing
 var givenName = "Angela";
-givenName.slice(0,6); //output is "A"
-givenName.slice(0,6); //output is "An"
-givenName.slice(0,6); //output is "Ang"
-givenName.slice(0,6); //output is "Ange"
-givenName.slice(0,6); //output is "Angel"
+givenName.slice(0,1); //output is "A"
+givenName.slice(0,2); //output is "An"
+givenName.slice(0,3); //output is "Ang"
+givenName.slice(0,4); //output is "Ange"
+givenName.slice(0,5); //output is "Angel"
 givenName.slice(0,6); //output is "Angela"
 givenName.slice(1,6); //output is "ngela"
 givenName.slice(2,6); //output is "gela"
