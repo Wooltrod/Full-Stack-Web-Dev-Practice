@@ -37,3 +37,6 @@ alert("Your tweet is: " + tweet + ". " + (input.length - tweet.length) + " chara
 var tweet2 = prompt("Compose your tweet: ");
 var tweetUnder140 = tweet2.slice(0, 140);
 alert(tweetUnder140);
+
+//instructor's solution code, condensed into a single line
+alert(prompt("Compose your tweet: ").slice(0, 140));
