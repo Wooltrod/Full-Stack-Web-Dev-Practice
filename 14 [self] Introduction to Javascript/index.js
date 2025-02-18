@@ -30,5 +30,5 @@ givenName.slice(5,6); //output is "a"
 
 //string slicing [twitter implementation]
 var input = prompt("write in your text");
-var tweet = input.slice(0,139);
+var tweet = input.slice(0,139); //this is wrong, should be (0, 140)
 alert("Your tweet is: " + tweet + ". " + (input.length - tweet.length) + " characters were removed from your tweet.");
