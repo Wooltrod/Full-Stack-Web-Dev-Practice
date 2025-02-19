@@ -44,5 +44,11 @@ alert(prompt("Compose your tweet: ").slice(0, 140));
 //string conversion to uppercase
 var myName = "Angela";
 myName = myName.toUpperCase();
-console.log(myName);
+console.log(myName);//ANGELA
+
+//String conversion to lowercase
+myName = myName.toLowerCase();
+console.log(myName);//angela
+
+
 
