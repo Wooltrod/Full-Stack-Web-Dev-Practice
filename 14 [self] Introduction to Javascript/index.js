@@ -50,5 +50,14 @@ console.log(myName);//ANGELA
 myName = myName.toLowerCase();
 console.log(myName);//angela
 
+/*Challenge: Write JS code that asks user to input 
+their name, and returns to the user (via alert) a 
+capitalised name regardless of the casing of the input*/
+var usersName = prompt("What is your name?");
+var firstLetter = (usersName.slice(0,1)).toUpperCase();
+var restOfTheLetters = (usersName.slice(1,Infinity)).toLowerCase();
+var capitalisedUsername = firstLetter + restOfTheLetters;
+alert("Hello, " + capitalisedUsername + "!");
+
 
 
