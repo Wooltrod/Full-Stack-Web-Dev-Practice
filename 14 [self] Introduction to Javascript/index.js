@@ -40,3 +40,9 @@ alert(tweetUnder140);
 
 //instructor's solution code, condensed into a single line
 alert(prompt("Compose your tweet: ").slice(0, 140));
+
+//string conversion to uppercase
+var myName = "Angela";
+myName = myName.toUpperCase();
+console.log(myName);
+
