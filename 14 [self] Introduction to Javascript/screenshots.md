@@ -19,3 +19,4 @@
 /////////////////////
 14.18 (https://stanford.edu/~cpiech/karel/ide.html)
 ![Stanford Karel](image-8.png)
+![instructor's solution](image-9.png)
