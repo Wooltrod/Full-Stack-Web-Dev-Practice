@@ -90,3 +90,17 @@ function lifeInWeeks(age){
     var monthsLeft = 1080 - (age * 12);
     console.log("You have " + daysLeft + " days, " + weeksLeft + " weeks, and " + monthsLeft + " months left")
 }
+
+//calling functions within other functions
+function getMilk(money, costPerBottle){
+    console.log("buy " + calcNumberOfBottles(money, costPerBottle) + " bottles of milk.");
+    return calculateChange(money,costPerBottle);
+}
+
+function calcNumberOfBottles(cashAtHand, costPerBottle){
+    return Math.floor(cashAtHand / costPerBottle);
+}
+
+function calculateChange(cashAtHand, costPerBottle){
+    return "Your change is: $ " + cashAtHand % costPerBottle;
+}
