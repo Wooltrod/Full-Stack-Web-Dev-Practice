@@ -16,3 +16,6 @@
 /////////////////////
 14.11
 ![my solution code for string slicing](image-7.png)
+/////////////////////
+14.18 (https://stanford.edu/~cpiech/karel/ide.html)
+![Stanford Karel](image-8.png)
