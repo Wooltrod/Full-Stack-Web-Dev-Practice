@@ -59,5 +59,13 @@ var restOfTheLetters = (usersName.slice(1,Infinity)).toLowerCase();
 var capitalisedUsername = firstLetter + restOfTheLetters;
 alert("Hello, " + capitalisedUsername + "!");
 
+/*dog age to human age converter 
+(combining operations; applying parentheses)*/
+var dogAge = prompt("What is the age of your dog?");
+var humanAge = ((dogAge - 2) * 4) + 21; 
+/*note the use of parenthesis above to highlight the 
+order of operations, for better code clarity*/
+alert("Your doggo is " + humanAge + " years old, in human years :)");
+
 
 
