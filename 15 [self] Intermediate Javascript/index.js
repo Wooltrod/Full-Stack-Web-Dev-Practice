@@ -7,3 +7,9 @@ var realNumber = decimal * 6;
 //we take the floor of the above value to obtain a clean integer
 var dieInteger = Math.floor(realNumber) + 1; 
 console.log(dieInteger);
+
+//Angela's version of the code above
+var n = Math.random();
+n = n * 6;
+n = Math.floor(n) + 1;
+console.log(n);
