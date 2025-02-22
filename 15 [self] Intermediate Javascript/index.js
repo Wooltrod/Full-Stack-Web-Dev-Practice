@@ -165,9 +165,6 @@ function beerSong(){
 var items = [];
 
 
-var items = [];
-
-
 function fizzBuzz(){
 
     for(var item = 1; item < 101; item++){
