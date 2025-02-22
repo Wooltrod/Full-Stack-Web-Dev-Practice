@@ -120,7 +120,7 @@ fizzBuzz();
 var friendGroup = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
 
 function whoIsPayingForLunch(array){
-    var index = Math.floor(Math.random()*6);
+    var index = Math.floor(Math.random()*(array.length));
     return array[index];
 }
 
