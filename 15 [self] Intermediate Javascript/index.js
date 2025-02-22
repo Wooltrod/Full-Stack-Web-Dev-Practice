@@ -64,5 +64,7 @@ function isItALeapYear(year){
                 return "no";
             }
         }
+    }else{
+        return "no";
     }
 }
