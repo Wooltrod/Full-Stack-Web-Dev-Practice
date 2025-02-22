@@ -56,16 +56,16 @@ if (fakePercentage <= 30) {
 function isItALeapYear(year){
     if(year % 4 === 0){
         if(year % 100 !== 0){
-            return "yes";
+            return "Yes, " + year + " is a leap year.";
         } else{
             if(year % 400 ===0){
-                return "yes";
+                return "Yes, " + year + " is a leap year.";
             } else{
-                return "no";
+                return "No, " + year + " is not a leap year.";
             }
         }
     }else{
-        return "no";
+        return "No, " + year + " is not a leap year.";
     }
 }
 
