@@ -97,4 +97,21 @@ function fizzBuzz(){
     console.log(items);
 }
 
+var items = [];
+var item = 0;
+
+function fizzBuzz(){
+    item = item + 1;
+    if (item % 3 === 0 && item % 5 !== 0){
+        items.push("Fizz");
+    } else if (item % 3 !== 0 && item % 5 === 0){
+        items.push("Buzz");
+    } else if (item % 3 === 0 && item % 5 === 0){
+        items.push("FizzBuzz");
+    } else{
+        items.push(item);
+    }
+    console.log(items);
+}
+
 fizzBuzz();
