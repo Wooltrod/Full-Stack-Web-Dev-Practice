@@ -149,3 +149,14 @@ function whoIsPayingForLunch(array){
 }
 
 whoIsPayingForLunch(friendGroup);
+
+//Beer Song
+function beerSong(){
+    var numberOfBeerBottles = 99;
+    while(numberOfBeerBottles>0){
+        console.log(numberOfBeerBottles + " bottles of beer on the wall, " + numberOfBeerBottles + " bottles of beer. Take 1 down, pass it around, " + (numberOfBeerBottles - 1) + " bottles of beer on the wall.");
+        numberOfBeerBottles--;
+    }
+
+    console.log("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.");
+}
