@@ -199,10 +199,10 @@ within the main fibonacciGenerator() function which helps
 us to return the whole array sequence of n Fibonacci numbers */
 function fibonacciGenerator(n){
     function fibonacciSequence(n){
-        if (n==1){
+        if (n===1){
             return 0;
         }
-        if (n==2){
+        if (n===2){
             return 1;
         }
         if (n > 2){
