@@ -73,3 +73,28 @@ while(true){
     var inputYear = prompt("Enter your year");
     alert(isItALeapYear(inputYear));
 }
+
+//Collections and Javascript Arrays
+
+var guestList = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+var checkInName = prompt("Could we have your name?");
+
+if(guestList.includes(checkInName)){
+    alert("Hello, " + checkInName + "! Welcome to the party :)");
+}else{
+    alert("Unfortunately, your name isn't on the guest list. Maybe next time.");
+}
+
+/*FizzBuzz Challenge (for the iteration to work,
+run the "fizzBuzz" function in the Chrome 
+console rather that as code in the "sources" file)*/
+var items = [];
+var item = 0;
+
+function fizzBuzz(){
+    item = item + 1;
+    items.push(item);
+    console.log(items);
+}
+
+fizzBuzz();
