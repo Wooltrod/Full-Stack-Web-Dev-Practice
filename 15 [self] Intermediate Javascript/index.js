@@ -116,6 +116,30 @@ function fizzBuzz(){
 
 fizzBuzz();
 
+//FizzBuzz with While Loop for easier automation
+var items = [];
+var item = 1;
+
+function fizzBuzz(){
+
+    while(item <= 100){
+        if (item % 3 === 0 && item % 5 !== 0){
+        items.push("Fizz");
+        } else if (item % 3 !== 0 && item % 5 === 0){
+        items.push("Buzz");
+        } else if (item % 3 === 0 && item % 5 === 0){
+        items.push("FizzBuzz");
+        } else{
+        items.push(item);
+        }
+        item = item + 1;
+    }
+    
+    console.log(items);
+}
+
+fizzBuzz();
+
 //Who's Buying Lunch Code challenge
 var friendGroup = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
 
