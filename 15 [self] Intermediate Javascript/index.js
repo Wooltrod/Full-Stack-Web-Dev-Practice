@@ -160,3 +160,29 @@ function beerSong(){
 
     console.log("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.");
 }
+
+//FizzBuzz with For Loop for easier automation
+var items = [];
+
+
+var items = [];
+
+
+function fizzBuzz(){
+
+    for(var item = 1; item < 101; item++){
+        if (item % 3 === 0 && item % 5 !== 0){
+        items.push("Fizz");
+        } else if (item % 3 !== 0 && item % 5 === 0){
+        items.push("Buzz");
+        } else if (item % 3 === 0 && item % 5 === 0){
+        items.push("FizzBuzz");
+        } else{
+        items.push(item);
+        }
+        
+    }
+    
+    console.log(items);
+}
+
