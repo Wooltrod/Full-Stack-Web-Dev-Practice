@@ -34,3 +34,20 @@ if (fakePercentage > 70){
 } else {
     alert(person1 + "'s love compatibility with " + person2 + " is: " + fakePercentage + "%.");
 }
+
+//COMPARATORS AND EQUALITY
+//The Love Calculator (with added message types based on score ranges)
+var person1 = prompt("Write your first name:");
+var person2 = prompt("Write your crush's first name:");
+var fakePercentage = Math.random();
+fakePercentage = fakePercentage * 100;
+fakePercentage = Math.floor(fakePercentage) + 1;
+if (fakePercentage > 70){
+    alert(person1 + "'s love compatibility with " + person2 + " is: " + fakePercentage + "%. You love each other like Kanye Loves Kanye");
+} 
+if (fakePercentage > 30 && fakePercentage <= 70) {
+    alert(person1 + "'s love compatibility with " + person2 + " is: " + fakePercentage + "%.");
+}
+if (fakePercentage <= 30) {
+    alert(person1 + "'s love compatibility with " + person2 + " is: " + fakePercentage + "%. You go together like oil & water");
+}
