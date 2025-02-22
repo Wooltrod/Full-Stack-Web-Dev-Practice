@@ -183,3 +183,13 @@ function fizzBuzz(){
     console.log(items);
 }
 
+//first step: Fibonacci sequence n-th term generator
+function fibonacciSequence(n){
+    if (n=1){
+        return 0;
+    }else if (n=2){
+        return 1;
+    }else if (n > 2){
+        return fibonacciSequence(n-2) + fibonacciSequence(n-1);
+    }
+}
