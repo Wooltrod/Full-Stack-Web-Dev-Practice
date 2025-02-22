@@ -68,3 +68,8 @@ function isItALeapYear(year){
         return "no";
     }
 }
+
+while(true){
+    var inputYear = prompt("Enter your year");
+    alert(isItALeapYear(inputYear));
+}
