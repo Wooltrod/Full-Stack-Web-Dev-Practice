@@ -51,3 +51,18 @@ if (fakePercentage > 30 && fakePercentage <= 70) {
 if (fakePercentage <= 30) {
     alert(person1 + "'s love compatibility with " + person2 + " is: " + fakePercentage + "%. You go together like oil & water");
 }
+
+//Leap Year determination
+function isItALeapYear(year){
+    if(year % 4 === 0){
+        if(year % 100 !== 0){
+            return "yes";
+        } else{
+            if(year % 400 ===0){
+                return "yes";
+            } else{
+                return "no";
+            }
+        }
+    }
+}
