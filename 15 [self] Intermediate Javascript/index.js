@@ -115,3 +115,13 @@ function fizzBuzz(){
 }
 
 fizzBuzz();
+
+//Who's Buying Lunch Code challenge
+var friendGroup = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+
+function whoIsPayingForLunch(array){
+    var index = Math.floor(Math.random()*6);
+    return array[index];
+}
+
+whoIsPayingForLunch(friendGroup);
