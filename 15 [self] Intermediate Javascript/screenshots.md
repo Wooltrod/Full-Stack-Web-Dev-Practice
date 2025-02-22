@@ -1,0 +1,1 @@
+![FizzBuzz game code output (with While Loop Chrome Console)](image.png)
