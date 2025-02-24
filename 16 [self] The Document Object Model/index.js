@@ -21,3 +21,5 @@ document.querySelector("input").click();
 //my solution:
 document.querySelector("ul").lastElementChild.innerHTML = "Ian Peter Otieno Adoyo";
 
+//Challenge: change the first list element (anchor) to green/a color of your choice:
+document.querySelector("li a").style.color = "green"; //note we have narrowed down by using "descendance"
