@@ -10,3 +10,9 @@ var heading = document.firstElementChild.lastElementChild.firstElementChild;
 
 //we can then target the heading variable with functions to modify our H1 as we wish:
 heading.innerHTML = "Good Bye"; //"innerHTML" denotes the part between the given HTML tags
+
+//we can also modify the STYLING of HTML elements:
+heading.style.color = "red";
+
+//selecting elements and performing actions on them:
+document.querySelector("input").click();
