@@ -26,3 +26,7 @@ document.querySelector("li a").style.color = "green"; //note we have narrowed do
 
 //Challenge: changing the value of the background-color property of the button to yellow:
 document.querySelector("button").style.backgroundColor = "yellow";
+
+/*separation of concerns: using javascript to simply select 
+snippets of styling from stylesheet to apply to elements*/
+document.querySelector("h1").classList.add("huge");
