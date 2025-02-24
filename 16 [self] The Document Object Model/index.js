@@ -16,3 +16,8 @@ heading.style.color = "red";
 
 //selecting elements and performing actions on them:
 document.querySelector("input").click();
+
+//select the 3rd li list element, and edit its contents from "Third" to your name:
+//my solution:
+document.querySelector("ul").lastElementChild.innerHTML = "Ian Peter Otieno Adoyo";
+
