@@ -29,3 +29,11 @@ if(randomNumberDieTwo === 1){
 }else if(randomNumberDieTwo === 6){
     document.querySelector(".dice > .img2").setAttribute("src", "./images/dice6.png");
 }
+
+if(randomNumberDieOne > randomNumberDieTwo){
+    document.querySelector("h1").textContent = "🚩Player One Wins!";
+}else if(randomNumberDieTwo > randomNumberDieOne){
+    document.querySelector("h1").textContent = "Player Two Wins!🚩";
+}else if(randomNumberDieOne === randomNumberDieTwo){
+    document.querySelector("h1").textContent = "Draw!";
+}
