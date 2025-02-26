@@ -13,3 +13,5 @@ if(randomNumberDieOne === 1){
 }else if(randomNumberDieOne === 6){
     document.querySelector(".dice > .img1").setAttribute("src", "./images/dice6.png");
 }
+
+var randomNumberDieTwo = (Math.floor(Math.random()*6)) + 1;
