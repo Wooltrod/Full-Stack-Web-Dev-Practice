@@ -15,3 +15,17 @@ if(randomNumberDieOne === 1){
 }
 
 var randomNumberDieTwo = (Math.floor(Math.random()*6)) + 1;
+
+if(randomNumberDieTwo === 1){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice1.png");
+}else if(randomNumberDieTwo === 2){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice2.png");
+}else if(randomNumberDieTwo === 3){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice3.png");
+}else if(randomNumberDieTwo === 4){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice4.png");
+}else if(randomNumberDieTwo === 5){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice5.png");
+}else if(randomNumberDieTwo === 6){
+    document.querySelector(".dice > .img2").setAttribute("src", "./images/dice6.png");
+}
