@@ -1,0 +1,1 @@
+var randomNumberDieOne = (Math.floor(Math.random()*6)) + 1;
