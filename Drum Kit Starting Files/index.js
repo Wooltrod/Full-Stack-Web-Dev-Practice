@@ -67,22 +67,6 @@ function Housekeeper(name, age, languages, yearsOfExperience){
 
 var housekeeper1 = new Housekeeper("ghette", 23, ["English", "Swahili"], 12);
 
-//playing sound by clicking on-screen buttons
-for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click", function (){
-        var buttonInnerHTML = this.innerHTML;
-        makeSound(buttonInnerHTML);
-    });
-}
-
-//playing sounds by pressing keyboard keys
-for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("keypress", function (event){
-        var buttonPressed = event.key;
-        makeSound(buttonPressed);
-    });
-}
-
 function makeSound(key){
     switch (key){
         case "w":
@@ -122,4 +106,31 @@ function makeSound(key){
 
         default: console.log(buttonPressed);
     };
+}
+
+//playing sound by clicking on-screen buttons
+for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
+    document.querySelectorAll(".drum")[i].addEventListener("click", function (){
+        var buttonInnerHTML = this.innerHTML;
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
+}
+
+//playing sounds by pressing keyboard keys
+for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
+    document.querySelectorAll(".drum")[i].addEventListener("keypress", function (event){
+        var buttonPressed = event.key;
+        makeSound(buttonPressed);
+        buttonAnimation(buttonPressed);
+    });
+}
+
+
+function buttonAnimation(currentKey){
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100)
 }
