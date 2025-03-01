@@ -28,3 +28,17 @@ function add(num1, num2){return num1 + num2;}
 function calculator(num1, num2, operator){
     return operator(num1, num2);
 }
+
+//applying DOM to change the text color of pressed buttons
+// for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
+//     document.querySelectorAll(".drum")[i].addEventListener("click", function (){
+//         this.classList.add("clicked");
+//     });
+// }
+
+//alternative solution
+for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
+    document.querySelectorAll(".drum")[i].addEventListener("click", function (){
+        this.style.color = "white";
+    });
+}
