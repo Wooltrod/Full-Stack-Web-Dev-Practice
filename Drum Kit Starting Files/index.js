@@ -87,3 +87,22 @@ for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
         };
     });
 }
+
+//Javascript Objects
+var housekeeper1 = {
+    name: "ghette",
+    age: 23,
+    languages: ["English", "Swahili"],
+    yearsOfExperience: 12
+}
+
+/*Javascript Objects using Constructor Function
+note capitalization*/
+function Housekeeper(name, age, languages, yearsOfExperience){
+    this.name = name;
+    this.age = age;
+    this.languages = languages;
+    this.yearsOfExperience = yearsOfExperience;
+}
+
+var housekeeper1 = new Housekeeper("ghette", 23, ["English", "Swahili"], 12);
