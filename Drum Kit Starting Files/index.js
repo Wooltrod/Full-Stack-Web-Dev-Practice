@@ -43,13 +43,7 @@ for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
     });
 }
 
-//applying "switch" statements to add different individual sounds to the button elements
-for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click", function (){
-        var buttonInnerHTML = this.innerHTML;
-        makeSound(buttonInnerHTML);
-    });
-}
+
 
 //Javascript Objects
 var housekeeper1 = {
@@ -73,6 +67,15 @@ function Housekeeper(name, age, languages, yearsOfExperience){
 
 var housekeeper1 = new Housekeeper("ghette", 23, ["English", "Swahili"], 12);
 
+//playing sound by clicking on-screen buttons
+for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
+    document.querySelectorAll(".drum")[i].addEventListener("click", function (){
+        var buttonInnerHTML = this.innerHTML;
+        makeSound(buttonInnerHTML);
+    });
+}
+
+//playing sounds by pressing keyboard keys
 for(var i = 0; i < document.querySelectorAll(".drum").length ; i++){
     document.querySelectorAll(".drum")[i].addEventListener("keypress", function (event){
         var buttonPressed = event.key;
