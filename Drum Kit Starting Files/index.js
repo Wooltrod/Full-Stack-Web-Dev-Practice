@@ -103,6 +103,9 @@ function Housekeeper(name, age, languages, yearsOfExperience){
     this.age = age;
     this.languages = languages;
     this.yearsOfExperience = yearsOfExperience;
+    this.cleaning = function (){
+        alert("cleaning in progress");
+    }
 }
 
 var housekeeper1 = new Housekeeper("ghette", 23, ["English", "Swahili"], 12);
