@@ -9,3 +9,18 @@ it is executed ONLY when the jQuery resource is fully loaded*/
 $(document).ready(function(){
     $("h1").css("color", "red");
 })
+
+/*further regarding the .css() function, we can also use it to get the 
+property value of a css , for example:*/
+console.log($("h1").css("font-size"));
+
+/*using jQuery to add classes to HTML elements (.addClass() method):*/
+$("h1").addClass("big-title");
+//adding multiple:
+$("h1").addClass("big-title margin-50");
+
+/*using jQuery to remove classes from HTML elements (.removeClass() method):*/
+$("h1").removeClass("big-title");
+
+/*using jQuery to query whether a certain class is applied to an element*/
+$("h1").hasClass("big-title"); //returns a boolean
