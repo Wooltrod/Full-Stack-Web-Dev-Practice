@@ -62,3 +62,10 @@ $("input").keypress(function(event){
 $("h1").on("mouseover", function(){
     $("h1").css("color", "purple");
 });
+
+/*Challenge: With every kestroke, change the h1 of 
+your webpage to the same value as the pressed key*/
+
+$("document").keypress(function(event){
+    $("h1").text(event.key);
+});
