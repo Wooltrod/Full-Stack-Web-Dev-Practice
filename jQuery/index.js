@@ -24,3 +24,13 @@ $("h1").removeClass("big-title");
 
 /*using jQuery to query whether a certain class is applied to an element*/
 $("h1").hasClass("big-title"); //returns a boolean
+
+/*Manipulating text with jQuery:*/
+$("h1").text("Bye");
+
+//manipulating actual HTML code using jQuery
+$("button").html("<em>Hey</em"); 
+
+//manipulating HTML attributes with jQuery:
+$("a").attr("href", "https://www.yahoo.com"); //setter
+$("img").attr("src"); //getter
