@@ -69,3 +69,9 @@ your webpage to the same value as the pressed key*/
 $("document").keypress(function(event){
     $("h1").text(event.key);
 });
+
+/* Adding and removing elements with jQuery*/
+$("h1").before("<button>New</button>");
+$("h1").before("<button>New</button>");
+$("h1").prepend("<button>New</button>");
+$("h1").append("<button>New</button>");
