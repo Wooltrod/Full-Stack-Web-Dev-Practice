@@ -34,3 +34,4 @@ $("button").html("<em>Hey</em");
 //manipulating HTML attributes with jQuery:
 $("a").attr("href", "https://www.yahoo.com"); //setter
 $("img").attr("src"); //getter
+
