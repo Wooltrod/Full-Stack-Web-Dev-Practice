@@ -35,3 +35,30 @@ $("button").html("<em>Hey</em");
 $("a").attr("href", "https://www.yahoo.com"); //setter
 $("img").attr("src"); //getter
 
+//adding event listeners with jQuery (click event):
+$("h1").click(function(){
+    $("h1").css("color", "purple");
+});
+
+//jQuery removes the need for for loops:
+for (var i =0; i<5; i++){
+    document.querySelectorAll("button")[i].addEventListener("click", function(){
+        document.querySelector("h1").style.color = "purple";
+    });
+}
+
+//shorter version of above code using jQuery
+$("button").click(function(){
+    $("h1").css("color", "purple");
+});
+
+//another example with the keypress event:
+$("input").keypress(function(event){
+    console.log(event.key);
+});
+
+/*the "on()" keyword to define events as parameters 
+(mouse hovering event in this example):*/
+$("h1").on("mouseover", function(){
+    $("h1").css("color", "purple");
+});
