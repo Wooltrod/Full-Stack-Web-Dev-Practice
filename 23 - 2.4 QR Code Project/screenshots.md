@@ -1,0 +1,1 @@
+![screenshot of self-written code solution to QR Code generator project](image.png)
