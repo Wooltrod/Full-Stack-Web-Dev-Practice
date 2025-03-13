@@ -8,5 +8,5 @@ const app = express(); //create an app using the express object
 //variable method for port number:
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server running on port ${port}.`)
+    console.log(`Server running on port ${port}.`);
 });
