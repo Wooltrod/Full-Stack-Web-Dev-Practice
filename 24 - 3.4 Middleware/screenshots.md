@@ -2,3 +2,5 @@
 ![alt text](image-1.png)
 ![body-parser implementation](image-2.png)
 ![body-parser results](image-3.png)
+![Band Name generator form from our actual HTML](image-5.png)
+![results logged onto console](image-4.png)
