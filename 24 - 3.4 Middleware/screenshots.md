@@ -4,3 +4,5 @@
 ![body-parser results](image-3.png)
 ![Band Name generator form from our actual HTML](image-5.png)
 ![results logged onto console](image-4.png)
+![Morgan middleware - code implementation](image-6.png)
+![Morgan middleware - implementation results](image-7.png)
