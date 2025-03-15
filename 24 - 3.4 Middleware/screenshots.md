@@ -9,3 +9,4 @@
 !![Custom Middleware Challenge](image-9.png)
 ![Custom Middleware Challenge results](image-10.png)
 ![Band Name Generator challenge completed](image-11.png)
+![Angela's solution](image-12.png)
