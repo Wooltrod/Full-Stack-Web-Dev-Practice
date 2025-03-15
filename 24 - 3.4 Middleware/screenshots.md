@@ -7,3 +7,4 @@
 ![Morgan middleware - code implementation](image-6.png)
 ![Morgan middleware - implementation results](image-7.png)
 !![Custom Middleware Challenge](image-9.png)
+![Custom Middleware Challenge results](image-10.png)
