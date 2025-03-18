@@ -1,2 +1,5 @@
 ![EJS Tags](image.png)
 ![Page Behavior](image-1.png)
+![index.js code](image-2.png)
+![My .ejs solution](image-3.png)
+![Angela's .ejs solution](image-4.png)
