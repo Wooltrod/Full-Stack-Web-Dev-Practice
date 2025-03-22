@@ -4,3 +4,4 @@
 ![POSTMAN API GET request to "Where The ISS At"](image-4.png)
 ![JSON response with details about the ISS](image-3.png)
 ![https://bored-api.appbrewery.com/random](image-5.png)
+![API Query Parameters](image-6.png)
