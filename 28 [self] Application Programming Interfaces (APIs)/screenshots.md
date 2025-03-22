@@ -1,3 +1,5 @@
 ![Example 1: Diary + Open Weather](image.png)
 ![Example 2: Newsletter + Mailchimp](image-1.png)
 ![Example 3: Remote IOT watering device](image-2.png)
+![POSTMAN API GET request to "Where The ISS At"](image-4.png)
+![JSON response with details about the ISS](image-3.png)
