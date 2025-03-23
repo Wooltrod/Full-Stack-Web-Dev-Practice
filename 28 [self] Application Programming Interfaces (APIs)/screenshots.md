@@ -8,3 +8,4 @@
 ![API Path Parameters](image-7.png)
 ![JSON vs Javascript Object](image-8.png)
 ![Serialisation: Turning JavaScript objects into JSON](image-9.png)
+![Serialisation: Turning JSON objects into Javascript](image-10.png)
