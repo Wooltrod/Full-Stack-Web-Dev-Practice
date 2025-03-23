@@ -19,7 +19,13 @@ app.get("/", (req, res) => {
 app.post("/recipe", (req, res) => {
   //Step 3: Write your code here to make this behave like the solution website.
   //Step 4: Add code to views/index.ejs to use the recieved recipe object.
-  
+  if(req.body.choice === 'chicken'){
+    res.render("index.ejs", { clicked: (JSON.parse(recipeJSON))[0] }); //pass the 1st element in the array
+  }else if(req.body.choice === 'beef'){
+    res.render("index.ejs", { clicked: (JSON.parse(recipeJSON))[1] }); //pass the 2nd element in the array
+  }else{
+    res.render("index.ejs", { clicked: (JSON.parse(recipeJSON))[2] }); //pass the 3rd element in the array
+  }
 });
 
 app.listen(port, () => {
