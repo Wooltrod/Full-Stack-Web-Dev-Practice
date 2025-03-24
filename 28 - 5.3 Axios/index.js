@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
-      error: error.message,
+      error: "Failed to make request: " + error.message 
     });
   }
 });
@@ -35,6 +35,17 @@ app.post("/", async (req, res) => {
   // Step 3: If you get a 404 error (resource not found) from the API request.
   // Pass an error to the index.ejs to tell the user:
   // "No activities that match your criteria."
+
+  try {
+    const responseFiltered = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body.type}&participants=${req.body.participants}`);
+    const resultFiltered = responseFiltered.data;
+    res.render("index.ejs", { data: resultFiltered[Math.floor(Math.random()*(resultFiltered.length))] });
+  } catch (error) {
+    console.error("No activities that match your criteria.", error.message);
+    res.render("index.ejs", {
+      error: error.message += ". No activities that match your criteria."
+    });
+  }
 });
 
 app.listen(port, () => {
