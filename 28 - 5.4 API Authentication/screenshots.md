@@ -6,3 +6,4 @@
 ![Postman: Hitting the /generate-api-key endpoint](image-5.png)
 ![Postman: Hitting the /filter endpoint using our generated API Key (passed in URL)](image-6.png)
 ![Postman: Sample of generated secrets matching our filter query](image-7.png)
+![Postman: Angela's Alternative approach, instead of typing the API Key manually into the Query parameters](image-8.png)
