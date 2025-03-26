@@ -5,3 +5,4 @@
 ![Postman: Our Encoded Password](image-4.png)
 ![Postman: Hitting the /generate-api-key endpoint](image-5.png)
 ![Postman: Hitting the /filter endpoint using our generated API Key (passed in URL)](image-6.png)
+![Postman: Sample of generated secrets matching our filter query](image-7.png)
