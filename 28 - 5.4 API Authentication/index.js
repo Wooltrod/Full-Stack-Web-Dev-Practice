@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { content: "API Response." });
 });
 
-app.get("/random", async (req, res) => {
+app.get("/noAuth", async (req, res) => {
   //TODO 2: Use axios to hit up the /random endpoint
   //The data you get back should be sent to the ejs file as "content"
   //Hint: make sure you use JSON.stringify to turn the JS object from axios into a string.
@@ -30,7 +30,7 @@ app.get("/random", async (req, res) => {
   }
 });
 
-app.get("/all", (req, res) => {
+app.get("/basicAuth", async (req, res) => {
   //TODO 3: Write your code here to hit up the /all endpoint
   //Specify that you only want the secrets from page 2
   //HINT: This is how you can use axios to do basic auth:
@@ -44,13 +44,11 @@ app.get("/all", (req, res) => {
     });
   */
   try {
-    const response = 
-    axios.get('https://secrets-api.appbrewery.com/all?page=1', {
+    const response = await axios.get('https://secrets-api.appbrewery.com/all?page=1', {
       auth: {
           username: yourUsername,
           password: yourPassword
         },
-      params: { username }
     });
     res.render("index.ejs", { data: JSON.stringify(response.data) });
   } catch (error) {
@@ -77,7 +75,7 @@ app.get("/apiKey", async (req, res) => {
   }
 });
 
-app.get("/secrets/42", (req, res) => {
+app.get("/bearerToken", async (req, res) => {
   //TODO 5: Write your code here to hit up the /secrets/{id} endpoint
   //and get the secret with id of 42
   //HINT: This is how you can use axios to do bearer token auth:
@@ -90,8 +88,7 @@ app.get("/secrets/42", (req, res) => {
   });
   */
   try {
-    const response = 
-    axios.get('https://secrets-api.appbrewery.com/secrets/42', {
+    const response = await axios.get('https://secrets-api.appbrewery.com/secrets/42', {
       headers: { 
         Authorization: `Bearer ${yourBearerToken}` 
       },
