@@ -40,13 +40,26 @@ app.post("/jokes", (req, res) => {
 });
 
 //5. PUT a joke
+// app.put("/jokes/:id", (req, res) => {
+//   const id = parseInt(req.params.id);
+//   const foundJoke = jokes.find((joke) => joke.id === id);
+//   foundJoke.id = req.params.id;
+//   foundJoke.jokeText = req.body.text;
+//   foundJoke.jokeType = req.body.type;
+//   res.json(foundJoke);
+// });
+
+//5b. PUT a joke (Angela's Implementation)
 app.put("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const foundJoke = jokes.find((joke) => joke.id === id);
-  foundJoke.id = req.params.id;
-  foundJoke.jokeText = req.body.text;
-  foundJoke.jokeType = req.body.type;
-  res.json(foundJoke);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  }
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  jokes[searchIndex] = replacementJoke;
+  res.json(replacementJoke);
 });
 
 //6. PATCH a joke
