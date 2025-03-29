@@ -1,0 +1,1 @@
+![GET a random joke](image.png)
