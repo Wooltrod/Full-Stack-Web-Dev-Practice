@@ -63,24 +63,38 @@ app.put("/jokes/:id", (req, res) => {
 });
 
 //6. PATCH a joke
+// app.patch("/jokes/:id", (req, res) => {
+//   const id = parseInt(req.params.id);
+//   const foundJoke = jokes.find((joke) => joke.id === id);
+//   if (!foundJoke) {
+//     return res.status(404).json({ error: "Joke not found" });
+//   }
+//   // Key mapping: Convert request body keys to match the object keys
+//   const keyMap = {
+//     text: "jokeText",
+//     type: "jokeType"
+//   };
+//   Object.keys(req.body).forEach(key => {
+//     const mappedKey = keyMap[key] || key; // If key exists in map, replace it; otherwise, keep it
+//     if (foundJoke.hasOwnProperty(mappedKey)) {
+//       foundJoke[mappedKey] = req.body[key]; // Update only provided fields
+//     }
+//   });
+//   res.json(foundJoke);
+// });
+
 app.patch("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const foundJoke = jokes.find((joke) => joke.id === id);
-  if (!foundJoke) {
-    return res.status(404).json({ error: "Joke not found" });
-  }
-  // Key mapping: Convert request body keys to match the object keys
-  const keyMap = {
-    text: "jokeText",
-    type: "jokeType"
+  const existingJoke = jokes.find((joke) => joke.id === id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text || existingJoke.jokeText,
+    jokeText: req.body.type || existingJoke.jokeType,
   };
-  Object.keys(req.body).forEach(key => {
-    const mappedKey = keyMap[key] || key; // If key exists in map, replace it; otherwise, keep it
-    if (foundJoke.hasOwnProperty(mappedKey)) {
-      foundJoke[mappedKey] = req.body[key]; // Update only provided fields
-    }
-  });
-  res.json(foundJoke);
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  jokes[searchIndex] = replacementJoke;
+  console.log(jokes[searchIndex]);
+  res.json(replacementJoke);
 });
 
 
