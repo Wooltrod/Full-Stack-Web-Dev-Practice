@@ -63,6 +63,26 @@ app.put("/jokes/:id", (req, res) => {
 });
 
 //6. PATCH a joke
+app.patch("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const foundJoke = jokes.find((joke) => joke.id === id);
+  if (!foundJoke) {
+    return res.status(404).json({ error: "Joke not found" });
+  }
+  // Key mapping: Convert request body keys to match the object keys
+  const keyMap = {
+    text: "jokeText",
+    type: "jokeType"
+  };
+  Object.keys(req.body).forEach(key => {
+    const mappedKey = keyMap[key] || key; // If key exists in map, replace it; otherwise, keep it
+    if (foundJoke.hasOwnProperty(mappedKey)) {
+      foundJoke[mappedKey] = req.body[key]; // Update only provided fields
+    }
+  });
+  res.json(foundJoke);
+});
+
 
 //7. DELETE Specific joke
 
