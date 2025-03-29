@@ -101,8 +101,7 @@ app.patch("/jokes/:id", (req, res) => {
 app.delete("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const indexToDelete = jokes.findIndex((joke) => joke.id === id);
-  delete jokes[indexToDelete];
-  jokes[indexToDelete] = {message: "This joke does not exist"} ;
+  jokes[indexToDelete] = {id, message: "This joke does not exist"} ;
   res.json({message: `Joke #${req.params.id} was deleted successfully`});
 });
 
