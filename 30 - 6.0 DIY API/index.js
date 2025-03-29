@@ -97,10 +97,25 @@ app.patch("/jokes/:id", (req, res) => {
   res.json(replacementJoke);
 });
 
-
 //7. DELETE Specific joke
+app.delete("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const indexToDelete = jokes.findIndex((joke) => joke.id === id);
+  delete jokes[indexToDelete];
+  jokes[indexToDelete] = {message: "This joke does not exist"} ;
+  res.json({message: `Joke #${req.params.id} was deleted successfully`});
+});
 
 //8. DELETE All jokes
+app.delete("/all", (req, res) => {
+  const emptyArray = [];
+  if(req.query.key === masterKey){
+    jokes = emptyArray;
+    res.json({message: `All the jokes have been deleted successfully`});
+  } else {
+    res.json({message: `The Key you have entered is incorrect`});
+  }
+});
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
