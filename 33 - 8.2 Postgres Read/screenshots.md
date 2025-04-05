@@ -1,0 +1,1 @@
+![PostgreSQL Set-up](image.png)
