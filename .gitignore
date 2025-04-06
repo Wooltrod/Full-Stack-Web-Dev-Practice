@@ -2,6 +2,9 @@
 .env
 .DS_Store
 
+#postgreSQL
+dbConfig.js
+
 # Logs
 logs
 *.log
