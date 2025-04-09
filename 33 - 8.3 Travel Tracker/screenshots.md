@@ -1,0 +1,1 @@
+![Comparison of INSERT .sql vs .js](image.png)
