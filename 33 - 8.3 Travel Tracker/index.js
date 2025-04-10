@@ -33,16 +33,22 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/add", async (req, res) => {
-  const formattedUserInput = (req.body.country.trim()).slice(0,1).toUpperCase() + (req.body.country.trim()).slice(1,(req.body.country.trim()).length).toLowerCase();
+  const formattedUserInput = (req.body.country.trim())
+    .slice(0,1)
+    .toUpperCase() + (req.body.country.trim()) //concatentation
+    .slice(1,(req.body.country.trim()).length)
+    .toLowerCase();
   console.log(formattedUserInput);
 
   try {
-    let matchingRecord = (await db.query("SELECT * FROM countries WHERE country_name = $1", [formattedUserInput])).rows;
+    let matchingRecord = (await db.query("SELECT * FROM countries WHERE country_name = $1", 
+      [formattedUserInput])).rows;
     console.log(matchingRecord);
     console.log(matchingRecord[0].country_code);
 
     try {
-      await db.query("INSERT INTO visited_countries (country_code) VALUES ($1)", [matchingRecord[0].country_code]);
+      await db.query("INSERT INTO visited_countries (country_code) VALUES ($1)", 
+        [matchingRecord[0].country_code]);
     } catch (err) {
       console.log(err);
       const countries = await checkVisited();
