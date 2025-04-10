@@ -10,27 +10,24 @@ const db = new pg.Client(dbConfig);
 
 db.connect();
 
-let allVisitedCountries = [];
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+async function checkVisited() {
+  const result = await db.query("SELECT * FROM visited_countries");
+
+  let countries = [];
+  result.rows.forEach((country) => {
+    countries.push(country.country_code);
+  });
+  return countries;
+}
+
 app.get("/", async (req, res) => {
   //Write your code here.
-  try{
-    await db.query("SELECT * FROM visited_countries", (err, res) => {
-      if (err) {
-        console.error("Error executing query", err.stack);
-      } else {
-        allVisitedCountries = res.rows;
-      }
-    });
-  } catch (err) {
-    console.error(err);
-  }
-
+  const allVisitedCountries = await checkVisited();
   res.render("index.ejs", { 
-    countries: allVisitedCountries.map(c => c.country_code),
+    countries: allVisitedCountries,
     total: allVisitedCountries.length,
   });
 });
