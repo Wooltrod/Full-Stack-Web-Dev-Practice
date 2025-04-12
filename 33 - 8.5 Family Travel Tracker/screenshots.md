@@ -1,0 +1,1 @@
+![SQL JOIN ("Inner Join")](image.png)
