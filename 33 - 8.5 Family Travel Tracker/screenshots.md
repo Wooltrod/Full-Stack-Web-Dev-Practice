@@ -2,3 +2,4 @@
 ![Joining student table with homework_submission table](image-1.png)
 ![Joining student table with homework_submission table, choosing to display particular fields only](image-2.png)
 ![Joining tables with Many-to-Many relationships ](image-3.png)
+![Using Aliases](image-4.png)
