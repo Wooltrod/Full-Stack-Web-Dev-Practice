@@ -1,17 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import { dbConfig } from "./dbConfig.js";
 
 const app = express();
 const port = 3000;
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "world",
-  password: "123456",
-  port: 5432,
-});
+const db = new pg.Client(dbConfig);
+
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -65,11 +61,14 @@ app.post("/add", async (req, res) => {
     console.log(err);
   }
 });
-app.post("/user", async (req, res) => {});
+app.post("/user", async (req, res) => {
+
+});
 
 app.post("/new", async (req, res) => {
   //Hint: The RETURNING keyword can return the data that was inserted.
   //https://www.postgresql.org/docs/current/dml-returning.html
+  const colorSelected = req.body.color;
 });
 
 app.listen(port, () => {
