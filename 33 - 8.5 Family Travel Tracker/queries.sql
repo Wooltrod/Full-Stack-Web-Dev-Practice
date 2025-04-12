@@ -35,6 +35,10 @@ CREATE TABLE homework_submission (
 INSERT INTO homework_submission (mark, student_id)
 VALUES (98, 1), (87, 1), (88, 1)
 
+-- Join (my solution)--
+SELECT * FROM student JOIN homework_submission 
+ON student.id = homework_submission.student_id;
+
 -- Join --
 SELECT *
 FROM student
