@@ -37,6 +37,7 @@ app.get("/", async (req, res) => {
     color: "teal",
   });
 });
+
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
 
@@ -62,13 +63,17 @@ app.post("/add", async (req, res) => {
   }
 });
 app.post("/user", async (req, res) => {
-
+  if(req.body.name === "new"){
+    res.render("new.ejs");
+  }
 });
 
 app.post("/new", async (req, res) => {
   //Hint: The RETURNING keyword can return the data that was inserted.
   //https://www.postgresql.org/docs/current/dml-returning.html
+  const newUser  = req.body.name;
   const colorSelected = req.body.color;
+  await db.query("INSERT INTO users (name, color) VALUES ($1, $2) RETURNING name, color", [newUser, colorSelected]);
 });
 
 app.listen(port, () => {
