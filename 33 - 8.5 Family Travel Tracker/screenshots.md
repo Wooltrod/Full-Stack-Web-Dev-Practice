@@ -5,3 +5,4 @@
 ![Using Aliases](image-4.png)
 ![ALTER](image-5.png)
 ![ALTER 2](image-6.png)
+![UPDATE](image-7.png)
