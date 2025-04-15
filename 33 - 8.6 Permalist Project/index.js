@@ -8,6 +8,8 @@ const port = 3000;
 
 const db = new pg.Client(dbConfig);
 
+db.connect();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -25,30 +27,34 @@ async function checkTaks() {
   return items;
 }
 
-app.get("/", (req, res) => {
-  const items = checkTaks();
+app.get("/", async (req, res) => {
+  const items = await checkTaks();
+  console.log(items);
   res.render("index.ejs", {
     listTitle: "Today",
     listItems: items,
   });
 });
 
-app.post("/add", (req, res) => {
+app.post("/add", async (req, res) => {
   const item = req.body.newItem;
   //items.push({ title: item });
   db.query("INSERT INTO items (title) VALUES ($1);", [item]);
   res.redirect("/");
 });
 
-app.post("/edit", (req, res) => {
+app.post("/edit", async (req, res) => {
   const editedTaskId = req.body.updatedItemId;
   const editedTaskTitle = req.body.updatedItemTitle;
-  db.query("UPDATE items SET title = $1 WHERE id = $2;", [editedTaskTitle, editedTaskId]);
+  await db.query("UPDATE items SET title = $1 WHERE id = $2;", [editedTaskTitle, editedTaskId]);
+  res.redirect("/");
 });
 
-app.post("/delete", (req, res) => {
+app.post("/delete", async (req, res) => {
   const completedTaskId = req.body.deleteItemId;
-  db.query("DELETE * FROM items WHERE id = $1;", [completedTaskId]);
+  console.log(completedTaskId);
+  await db.query("DELETE FROM items WHERE id = $1;", [completedTaskId]);
+  res.redirect("/");
 });
 
 app.listen(port, () => {
