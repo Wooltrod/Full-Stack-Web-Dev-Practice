@@ -9,3 +9,4 @@
 ![UPDATE 2](image-8.png)
 ![ORDER BY](image-9.png)
 ![ORDER BY 2](image-10.png)
+![DELETE](image-11.png)
