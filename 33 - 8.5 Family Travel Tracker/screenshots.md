@@ -7,3 +7,4 @@
 ![ALTER 2](image-6.png)
 ![UPDATE](image-7.png)
 ![UPDATE 2](image-8.png)
+![ORDER BY](image-9.png)
