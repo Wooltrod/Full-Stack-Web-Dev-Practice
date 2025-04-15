@@ -6,3 +6,4 @@
 ![ALTER](image-5.png)
 ![ALTER 2](image-6.png)
 ![UPDATE](image-7.png)
+![UPDATE 2](image-8.png)
