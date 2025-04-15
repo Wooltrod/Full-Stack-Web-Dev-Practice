@@ -48,6 +48,7 @@ app.get("/", async (req, res) => {
 
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
+  const currentUser = await getCurrentUser();
 
   try {
     const result = await db.query(
@@ -59,8 +60,8 @@ app.post("/add", async (req, res) => {
     const countryCode = data.country_code;
     try {
       await db.query(
-        "INSERT INTO visited_countries (country_code) VALUES ($1)",
-        [countryCode]
+        "INSERT INTO visited_countries (country_code, user_id) VALUES ($1, $2)",
+        [countryCode, currentUserId]
       );
       res.redirect("/");
     } catch (err) {
@@ -70,9 +71,13 @@ app.post("/add", async (req, res) => {
     console.log(err);
   }
 });
+
 app.post("/user", async (req, res) => {
-  if(req.body.name === "new"){
+  if (req.body.add === "new") {
     res.render("new.ejs");
+  } else {
+    currentUserId = req.body.user;
+    res.redirect("/");
   }
 });
 
