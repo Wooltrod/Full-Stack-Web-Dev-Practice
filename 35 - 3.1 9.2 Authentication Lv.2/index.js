@@ -32,7 +32,7 @@ app.post("/register", async (req, res) => {
   const password = req.body.password;
 
   try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
+    const checkResult = await db.query("SELECT * FROM user_credentials WHERE email_address = $1", [
       email,
     ]);
 
@@ -45,7 +45,7 @@ app.post("/register", async (req, res) => {
           console.log("Error hashing password:", err);
         } else {
           const result = await db.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2)",
+            "INSERT INTO user_credentials (email_address, password) VALUES ($1, $2)",
             [email, password]
           );
           console.log(result);
