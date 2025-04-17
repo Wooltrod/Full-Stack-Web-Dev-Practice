@@ -63,7 +63,7 @@ app.post("/login", async (req, res) => {
   const password = req.body.password;
 
   try {
-    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+    const result = await db.query("SELECT * FROM user_credentials WHERE email_address = $1", [
       email,
     ]);
     if (result.rows.length > 0) {
