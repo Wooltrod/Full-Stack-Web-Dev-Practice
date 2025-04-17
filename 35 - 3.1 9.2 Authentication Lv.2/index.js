@@ -1,17 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { dbConfig } from "./dbConfig.js";
 import pg from "pg";
+import bcrypt from bcrypt;
 
 const app = express();
 const port = 3000;
+const saltrounds = 10;
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "secrets",
-  password: "123456",
-  port: 5432,
-});
+const db = new pg.Client(dbConfig);
+
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
