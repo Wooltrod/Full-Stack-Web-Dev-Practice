@@ -46,7 +46,7 @@ app.post("/register", async (req, res) => {
         } else {
           const result = await db.query(
             "INSERT INTO user_credentials (email_address, password) VALUES ($1, $2)",
-            [email, password]
+            [email, hash]
           );
           console.log(result);
           res.render("secrets.ejs");
