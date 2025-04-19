@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use(session({
-  secret: "TOPSECRETWORD", //key to encrypt cook
+  secret: "TOPSECRETWORD", //key to encrypt cookie
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24,
+    maxAge: 1000 * 60 * 60 * 24, //should be in milliseconds
   }
 })
 );
@@ -52,6 +52,7 @@ app.get("/secrets", (req, res) => {
   }
 });
 
+//this method below is what triggers our passport-local strategy below 
 app.post("/login", passport.authenticate("local", {
   successRedirect: "/secrets",
   failureRedirect: "/login"
@@ -74,13 +75,15 @@ app.post("/register", async (req, res) => {
         if (err) {
           console.error("Error hashing password:", err);
         } else {
+
+          //Using passport for prompt logging in of users after registration
           console.log("Hashed Password:", hash);
           const result = await db.query(
             "INSERT INTO user_credentials (email_address, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
           const user = result.rows[0];
-          req.login(user, (err) => {
+          req.login(user, (err) => { 
             console.log(err);
             res.redirect("/secrets");
           });
