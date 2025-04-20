@@ -4,9 +4,9 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
+import GoogleStrategy from "passport-google-oauth2";
 import session from "express-session";
 import env from "dotenv";
-import GoogleStrategy from "passport-google-oauth2"
 
 const app = express();
 const port = 3000;
@@ -20,7 +20,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -35,8 +34,6 @@ const db = new pg.Client({
   port: process.env.PG_PORT,
 });
 db.connect();
-
-var currentUser;
 
 app.get("/", (req, res) => {
   res.render("home.ejs");
@@ -59,17 +56,10 @@ app.get("/logout", (req, res) => {
   });
 });
 
-async function checkSecret(user) {
-  const result = await db.query("SELECT secret FROM user_credentials WHERE email_address = $1", [user.email_address]);
-  return result.rows[0].secret;
-}
-
-app.get("/secrets", async (req, res) => {
-  currentUser = req.user.id;
+app.get("/secrets", (req, res) => {
   if (req.isAuthenticated()) {
-    const storedSecret = await checkSecret(req.user);
-    res.render("secrets.ejs", { secret: storedSecret } 
-    );
+    res.render("secrets.ejs");
+
     //TODO: Update this to pull in the user secret to render in secrets.ejs
   } else {
     res.redirect("/login");
@@ -78,30 +68,21 @@ app.get("/secrets", async (req, res) => {
 
 //TODO: Add a get route for the submit button
 //Think about how the logic should work with authentication.
-app.get("/submit", (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render("submit.ejs");
-  } else {
-    res.redirect("/login");
-  }
-});
 
-app.get("/auth/google", passport.authenticate("google", {
-  scope: ["profile", "email"],
-}));
-
-app.get("/auth/google/secrets", passport.authenticate("google", {
-  successRedirect: "/secrets",
-  failureRedirect: "/login",
-})
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
 );
 
-app.get("/logout", (req, res) => {
-  req.logout((err) => {
-  if (err) console.log(err);
-  res.redirect("/");
-  });
-});
+app.get(
+  "/auth/google/secrets",
+  passport.authenticate("google", {
+    successRedirect: "/secrets",
+    failureRedirect: "/login",
+  })
+);
 
 app.post(
   "/login",
@@ -116,7 +97,7 @@ app.post("/register", async (req, res) => {
   const password = req.body.password;
 
   try {
-    const checkResult = await db.query("SELECT * FROM user_credentials WHERE email_address = $1", [
+    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
 
@@ -128,7 +109,7 @@ app.post("/register", async (req, res) => {
           console.error("Error hashing password:", err);
         } else {
           const result = await db.query(
-            "INSERT INTO user_credentials (email_address, password) VALUES ($1, $2) RETURNING *",
+            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
           const user = result.rows[0];
@@ -146,18 +127,12 @@ app.post("/register", async (req, res) => {
 
 //TODO: Create the post route for submit.
 //Handle the submitted data and add it to the database
-app.post("/submit", async (req, res) => {
-  const updateQuery = await db.query("UPDATE user_credentials SET secret = $1 WHERE id = $2 RETURNING *", 
-    [req.body.secret, currentUser]
-  );
-  console.log(updateQuery.rows[0]);
-  res.redirect("/secrets");
-});
 
-passport.use("local",
+passport.use(
+  "local",
   new Strategy(async function verify(username, password, cb) {
     try {
-      const result = await db.query("SELECT * FROM user_credentials WHERE email_address = $1 ", [
+      const result = await db.query("SELECT * FROM users WHERE email = $1 ", [
         username,
       ]);
       if (result.rows.length > 0) {
@@ -165,15 +140,12 @@ passport.use("local",
         const storedHashedPassword = user.password;
         bcrypt.compare(password, storedHashedPassword, (err, valid) => {
           if (err) {
-            //Error with password check
             console.error("Error comparing passwords:", err);
             return cb(err);
           } else {
             if (valid) {
-              //Passed password check
               return cb(null, user);
             } else {
-              //Did not pass password check
               return cb(null, false);
             }
           }
@@ -187,32 +159,40 @@ passport.use("local",
   })
 );
 
-passport.use("google", new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets",
-  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
-}, async (accessToken, refreshToken, profile, cb) => {
-  
-  try {
-    console.log(profile);
-    const result = await db.query("SELECT * FROM user_credentials WHERE email_address = $1", [profile.email]);
-    if (result.rows.length === 0) {
-      const newUser = await db.query("INSERT INTO user_credentials (email_address, password) VALUES ($1, $2)", [profile.email, "google"]);
-      return cb(null, newUser.rows[0]);
-    } else {
-      //already existing user
-      return cb(null, result.rows[0]);
+passport.use(
+  "google",
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "http://localhost:3000/auth/google/secrets",
+      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+    },
+    async (accessToken, refreshToken, profile, cb) => {
+      try {
+        console.log(profile);
+        const result = await db.query("SELECT * FROM users WHERE email = $1", [
+          profile.email,
+        ]);
+        if (result.rows.length === 0) {
+          const newUser = await db.query(
+            "INSERT INTO users (email, password) VALUES ($1, $2)",
+            [profile.email, "google"]
+          );
+          return cb(null, newUser.rows[0]);
+        } else {
+          return cb(null, result.rows[0]);
+        }
+      } catch (err) {
+        return cb(err);
+      }
     }
-  } catch (err) {
-    return cb(err);
-  }
-})
+  )
 );
-
 passport.serializeUser((user, cb) => {
   cb(null, user);
 });
+
 passport.deserializeUser((user, cb) => {
   cb(null, user);
 });
