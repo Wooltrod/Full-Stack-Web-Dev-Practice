@@ -1,4 +1,5 @@
 #project-wide
+.vscode
 .env
 .DS_Store
 
