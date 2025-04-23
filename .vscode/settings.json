@@ -10,6 +10,16 @@
             "name": "test",
             "username": "postgres",
             "database": "users"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 4321,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "database": "school",
+            "username": "postgres",
+            "name": "Project"
         }
     ]
 }
