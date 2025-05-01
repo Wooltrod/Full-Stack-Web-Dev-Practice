@@ -21,7 +21,7 @@ let users = [
 ];
 
 async function checkVisisted() {
-  const result = await db.query("SELECT country_code FROM visited_countries JOIN users ON users.id = user-id WHERE user_id = $1;", [currentUserId]);
+  const result = await db.query("SELECT country_code FROM visited_countries JOIN users ON users.id = user_id WHERE user_id = $1;", [currentUserId]);
   let countries = [];
   result.rows.forEach((country) => {
     countries.push(country.country_code);
