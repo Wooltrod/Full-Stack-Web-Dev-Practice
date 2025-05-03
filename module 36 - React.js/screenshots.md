@@ -2,3 +2,6 @@
 ![Javascript Expressions in JSX Practice](image-1.png)
 ![Defining attribute values using Javascript variables](image-2.png)
 ![Applying inline Styling for HTML elemnts in JSX](image-3.png)
+![Defining our custom component with React Props](image-4.png)
+![Implementation of our component with custom-made 'attributes'](image-5.png)
+![Outcome](image-6.png)
