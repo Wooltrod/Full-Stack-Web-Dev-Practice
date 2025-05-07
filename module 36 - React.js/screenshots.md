@@ -5,3 +5,4 @@
 ![Defining our custom component with React Props](image-4.png)
 ![Implementation of our component with custom-made 'attributes'](image-5.png)
 ![Outcome](image-6.png)
+![React Props Cheat Sheet](https://github.com/user-attachments/assets/886ead2d-09a5-45a4-85ae-0230dd59a27b)
