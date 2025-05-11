@@ -6,3 +6,4 @@
 ![Implementation of our component with custom-made 'attributes'](image-5.png)
 ![Outcome](image-6.png)
 ![React Props Cheat Sheet](https://github.com/user-attachments/assets/886ead2d-09a5-45a4-85ae-0230dd59a27b)
+![React.js Mapping](https://github.com/user-attachments/assets/66ac5b6e-d4e5-4983-99f5-15fcf2c7e003)
