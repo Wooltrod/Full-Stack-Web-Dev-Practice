@@ -32,6 +32,7 @@ numbers.findIndex(function (num) {
     return num > 10;
 });
 
+//Challenge: Write code that returns only the 'meaning' fields of the objects from emojipedia, making sure that only up to the first 100 characters is rendered for each
 const meaningsArray = emojipedia.map(function (e) {
     return e.meaning;
 })
