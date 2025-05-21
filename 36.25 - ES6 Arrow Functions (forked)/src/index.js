@@ -11,10 +11,16 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //   return x * 2;
 // });
 
+//Map - Arrow Function Version
+const newNumbers = numbers.map(x => x * 2);
+
 //////Filter - Create a new array by keeping the items that return true.
 // const newNumbers = numbers.filter(function(num) {
 //   return num < 10;
 // });
+
+//Filter - Arrow Function Version
+const newNumbers2 = numbers.filter(num => num < 10);
 
 //Reduce - Accumulate a value by doing something to each item in an array.
 // var newNumber = numbers.reduce(function (accumulator, currentNumber) {
