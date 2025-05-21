@@ -27,12 +27,21 @@ const newNumbers2 = numbers.filter(num => num < 10);
 //     return accumulator + currentNumber;
 // })
 
+//Reduce - Arrow Function Version
+var newNumber = numbers.reduce((accumulator, currentNumber) => accumulator + currentNumber);
+
 ////Find - find the first item that matches from an array.
 // const newNumber = numbers.find(function (num) {
 //   return num > 10;
 // })
 
+//Find - Arrow Function Version
+const newNumber = numbers.find(num => num > 10);
+
 ////FindIndex - find the index of the first item that matches.
 // const newNumber = numbers.findIndex(function (num) {
 //   return num > 10;
 // })
+
+////FindIndex - Arrow Function Version
+const newNumber3 = numbers.findIndex(num => num > 10);
