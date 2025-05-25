@@ -10,3 +10,5 @@
 ![React Dev Tools in Chrome Developer Tools](https://github.com/user-attachments/assets/4b8817c0-e231-49d4-b45d-44d33d95c537)
 ![Exporting Simple Javascript Object in React](https://github.com/user-attachments/assets/40bcb452-8593-48cc-8f97-433ea348bb2b)
 ![Ternary Operator](image-7.png)
+![&& (AND) Operator in Javascript](image-8.png)
+![&& Operator in Javascript vs React](image-9.png)
