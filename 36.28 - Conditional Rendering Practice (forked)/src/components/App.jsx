@@ -11,5 +11,15 @@ function App() {
   );
 }
 
+/*Angela's Solution (without exporing the userIsRegistered variable)*/
+function App() {
+  return (
+    <div className="container">
+      <Form isRegistered={userIsRegistered}/>
+    </div>
+  );
+}
+
+
 export default App;
 export { userIsRegistered };
