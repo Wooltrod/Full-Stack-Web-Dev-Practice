@@ -5,6 +5,9 @@ import animals from "./data";
 
 const [cat, dog] = animals;
 
+//destructuring object
+const {name, sound} = cat;
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
 // ReactDOM.render(
