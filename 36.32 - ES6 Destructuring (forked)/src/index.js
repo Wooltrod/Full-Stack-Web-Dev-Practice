@@ -5,11 +5,14 @@ import animals from "./data";
 
 const [cat, dog] = animals;
 
-//destructuring object
-const {name, sound} = cat;
+/*destructuring object
+const {name, sound} = cat;*/
 
 //destructuring object with alternative names for the fields
 const {name: catName, sound: catSound} = cat;
+
+//Syntax for assigning placeholder values for our destructured fields
+const {name = "Fluffy", sound = "Purr"} = cat;
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
