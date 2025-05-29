@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import cars from "./practice";
-import animals from "./data";
+import animals, { useAnimals } from "./data";
 
 const [cat, dog] = animals;
 
@@ -16,6 +16,10 @@ const {name = "Fluffy", sound = "Purr"} = cat;*/
 
 //Syntax for destructuring nested objects within objects
 const {name, sound, feedingRequirements: {food, water}} = cat;
+
+//call our useAnimals() function and destructure the returned array
+const [animal, makeSound] = useAnimals(cat);
+makeSound();
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
