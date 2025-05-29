@@ -11,8 +11,11 @@ const {name, sound} = cat;*/
 //destructuring object with alternative names for the fields
 const {name: catName, sound: catSound} = cat;
 
-//Syntax for assigning placeholder values for our destructured fields
-const {name = "Fluffy", sound = "Purr"} = cat;
+/*Syntax for assigning placeholder values for our destructured fields
+const {name = "Fluffy", sound = "Purr"} = cat;*/
+
+//Syntax for destructuring nested objects within objects
+const {name, sound, feedingRequirements: {food, water}} = cat;
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
