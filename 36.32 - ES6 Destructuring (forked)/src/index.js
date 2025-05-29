@@ -1,6 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import cars from "./practice";
+import animals from "./data";
+
+const [cat, dog] = animals;
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
-// import React from "react";
-// import ReactDOM from "react-dom";
 
 // ReactDOM.render(
 //   <table>
