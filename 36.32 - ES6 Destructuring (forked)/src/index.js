@@ -21,6 +21,10 @@ const {name, sound, feedingRequirements: {food, water}} = cat;
 const [animal, makeSound] = useAnimals(cat);
 makeSound();
 
+const [honda, tesla] = cars;
+const { model, coloursByPopularity[0]: teslaTopColour, speedStats } = tesla;
+const { model, coloursByPopularity[0]: hondaTopColour, speedStats } = honda;
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
 // ReactDOM.render(
