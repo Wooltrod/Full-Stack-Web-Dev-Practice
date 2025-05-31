@@ -21,18 +21,28 @@ const {name, sound, feedingRequirements: {food, water}} = cat;
 const [animal, makeSound] = useAnimals(cat);
 makeSound();
 
-const [honda, tesla] = cars;
-const { coloursByPopularity, speedStats } = tesla;
-// const { coloursByPopularity[0]: hondaTopColour, speedStats } = honda;
+// const [honda, tesla] = cars;
+// const { coloursByPopularity, speedStats } = tesla;
+// // const { coloursByPopularity[0]: hondaTopColour, speedStats } = honda;
 
-const { topSpeed: teslaTopSpeed } = speedStats;
-const [teslaTopColour] = coloursByPopularity;
+// const { topSpeed: teslaTopSpeed } = speedStats;
+// const [teslaTopColour] = coloursByPopularity;
 
-const { topSpeed: hondaTopSpeed } = honda.speedStats;
-const [hondaTopColour] = honda.coloursByPopularity;
+// const { topSpeed: hondaTopSpeed } = honda.speedStats;
+// const [hondaTopColour] = honda.coloursByPopularity;
+
+/*-----------------Angela's Solution--------------------*/
+
+const {speedStats: {topSpeed: teslaTopSpeed}} = tesla;
+const {speedStats: {topSpeed: hondaTopSpeed}} = honda;
+
+/*when we specify only one item in the array, despite the 
+original array having more than one item, that variable 
+name is used for the item at index 0 (first item)*/
+const {colorsByPopularity: [teslaTopColour]} = tesla;
+const {colorsByPopularity: [hondaTopColour]} = honda; 
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
-
 ReactDOM.render(
   <table>
     <tr>
