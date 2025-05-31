@@ -22,27 +22,34 @@ const [animal, makeSound] = useAnimals(cat);
 makeSound();
 
 const [honda, tesla] = cars;
-const { model, coloursByPopularity[0]: teslaTopColour, speedStats } = tesla;
-const { model, coloursByPopularity[0]: hondaTopColour, speedStats } = honda;
+const { coloursByPopularity, speedStats } = tesla;
+// const { coloursByPopularity[0]: hondaTopColour, speedStats } = honda;
+
+const { topSpeed: teslaTopSpeed } = speedStats;
+const [teslaTopColour] = coloursByPopularity;
+
+const { topSpeed: hondaTopSpeed } = honda.speedStats;
+const [hondaTopColour] = honda.coloursByPopularity;
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 
-// ReactDOM.render(
-//   <table>
-//     <tr>
-//       <th>Brand</th>
-//       <th>Top Speed</th>
-//     </tr>
-//     <tr>
-//       <td>{tesla.model}</td>
-//       <td>{teslaTopSpeed}</td>
-//       <td>{teslaTopColour}</td>
-//     </tr>
-//     <tr>
-//       <td>{honda.model}</td>
-//       <td>{hondaTopSpeed}</td>
-//       <td>{hondaTopColour}</td>
-//     </tr>
-//   </table>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(
+  <table>
+    <tr>
+      <th>Brand</th>
+      <th>Top Speed</th>
+      <th>Top Colour</th>
+    </tr>
+    <tr>
+      <td>{tesla.model}</td>
+      <td>{teslaTopSpeed}</td>
+      <td>{teslaTopColour}</td>
+    </tr>
+    <tr>
+      <td>{honda.model}</td>
+      <td>{hondaTopSpeed}</td>
+      <td>{hondaTopColour}</td>
+    </tr>
+  </table>,
+  document.getElementById("root")
+);
