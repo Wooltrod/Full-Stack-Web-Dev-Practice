@@ -2,23 +2,26 @@ import React, { useState } from "react";
 
 function App() {
   const [headingText, setHeadingText] = useState("Hello");
-  const [color, setColor] = useState("white");
+  //const [color, setColor] = useState("white");
+  const [isMouseOver, setMouseOver] = useState(false);
 
   function handleClick() {
     setHeadingText("Submitted");
   }
 
   function handleMouseOver() {
-    setColor("black");
+    //setColor("black");
+    setMouseOver(true);
   }
 
   function handleMouseOut() {
-    setColor("");
+    //setColor("");
+    setMouseOver(false);
   }
 
-  var buttonColor = {
+  /*var buttonColor = {
     backgroundColor: color,
-  };
+  };*/
 
   return (
     <div className="container">
@@ -27,7 +30,7 @@ function App() {
       <button
         onMouseOut={handleMouseOut}
         onMouseOver={handleMouseOver}
-        style={buttonColor}
+        style={{ backgroundColor: isMouseOver ? "black" : "white" }}
         onClick={handleClick}
       >
         Submit
