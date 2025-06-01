@@ -12,3 +12,4 @@
 ![Ternary Operator](image-7.png)
 ![&& (AND) Operator in Javascript](image-8.png)
 ![&& Operator in Javascript vs React](image-9.png)
+![[React Forms] onChange event Listener Console Output](image-10.png)
