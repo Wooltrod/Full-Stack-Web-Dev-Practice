@@ -49,5 +49,38 @@ function App() {
   );
 }
 
+/*part 2(improved): Update h1 based on input ONLY after hitting submit button*/
+
+function App() {
+  const [name, setName] = useState("");
+  const [isClicked, setClicked] = useState(false);
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setName(value);
+    if (value.trim() === "") {
+      setClicked(false);
+    }
+  }
+
+  function handleClick() {
+    if (name.trim() !== "") {
+      setClicked(true);
+    }
+  }
+
+  return (
+    <div className="container">
+      <h1>{isClicked ? `Hello ${name}` : "Hello"}</h1>
+      <input
+        onChange={handleChange}
+        type="text"
+        placeholder="What's your name?"
+        value={name}
+      />
+      <button onClick={handleClick}>Submit</button>
+    </div>
+  );
+}
 
 export default App;
