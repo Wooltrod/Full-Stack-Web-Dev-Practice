@@ -83,4 +83,41 @@ function App() {
   );
 }
 
+/*part 3: if using our input and button within a form HTML element, configure it to prevent page reloading on clicking the submit button */
+
+function App() {
+  const [name, setName] = useState("");
+  const [isClicked, setClicked] = useState(false);
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setName(value);
+    if (value.trim() === "") {
+      setClicked(false);
+    }
+  }
+
+  function handleClick(event) {
+    if (name.trim() !== "") {
+      setClicked(true);
+      event.preventDefault();
+    }
+  }
+
+  return (
+    <div className="container">
+      <form onSubmit={handleClick}>
+        <h1>{isClicked ? `Hello ${name}` : "Hello"}</h1>
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="What's your name?"
+          value={name}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
 export default App;
