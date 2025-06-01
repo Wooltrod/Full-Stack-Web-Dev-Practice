@@ -83,7 +83,8 @@ function App() {
   );
 }
 
-/*part 3: if using our input and button within a form HTML element, configure it to prevent page reloading on clicking the submit button */
+/*part 3: if using our input and button within a form HTML element, 
+configure it to prevent page reloading on clicking the submit button */
 
 function App() {
   const [name, setName] = useState("");
