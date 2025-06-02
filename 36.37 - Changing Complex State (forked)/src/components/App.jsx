@@ -18,11 +18,12 @@ function App() {
         Hello {fname} {lname}
       </h1>
       <form>
-        <input onChange={handleChange} name="fName" placeholder="First Name" />
+        <input onChange={handleChange} name="fName" placeholder="First Name" value={fname}/>
         <input
           onChange={handleChangeTwo}
           name="lName"
           placeholder="Last Name"
+          value={lname}
         />
         <button>Submit</button>
       </form>
