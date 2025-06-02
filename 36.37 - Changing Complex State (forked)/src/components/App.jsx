@@ -20,7 +20,12 @@ function App() {
         Hello {fname} {lname}
       </h1>
       <form>
-        <input onChange={handleChange} name="fName" placeholder="First Name" value={fname}/>
+        <input 
+          onChange={handleChange} 
+          name="fName" 
+          placeholder="First Name" 
+          value={fname}
+        />
         <input
           onChange={handleChangeTwo}
           name="lName"
@@ -32,6 +37,9 @@ function App() {
     </div>
   );
 }
+
+/*Add useState/Stateful implementation that parses both fname and lname 
+into a single object, and requires only one event listener function.*/
 
 function App() {
   // const [fname, setFname] = useState("");
