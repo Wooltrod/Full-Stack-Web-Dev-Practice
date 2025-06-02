@@ -5,11 +5,13 @@ function App() {
   const [lname, setLname] = useState("");
 
   function handleChange(event) {
-    setFname(event.target.value);
+    const name = event.target.value;
+    setFname(name);
   }
 
   function handleChangeTwo(event) {
-    setLname(event.target.value);
+    const name2 = event.target.value;
+    setLname(name2);
   }
 
   return (

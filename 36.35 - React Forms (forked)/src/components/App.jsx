@@ -5,7 +5,8 @@ function App() {
   const [name, setName] = useState("");
 
   function handleChange(event) {
-    setName(event.target.value);
+    const name = event.target.value;
+    setName(name);
   }
 
   return (
@@ -28,7 +29,8 @@ function App() {
   const [isClicked, setClicked] = useState(false);
 
   function handleChange(event) {
-    setName(event.target.value);
+    const name = event.target.value;
+    setName(name);
   }
 
   function handleClick() {
