@@ -3,6 +3,7 @@ import React from "react";
 function App() {
 
   const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
 
   function handleChange(event) {
     const newValue = event.target.value;
@@ -22,7 +23,9 @@ function App() {
       </div>
       <div>
         <ul>
-          <li>A Item</li>
+          {items.map((toDoItem) => {
+            return <li>{toDoItem}</li>;
+          })}
         </ul>
       </div>
     </div>
