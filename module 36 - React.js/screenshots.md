@@ -14,3 +14,5 @@
 ![&& Operator in Javascript vs React](image-9.png)
 ![[React Forms] onChange event Listener Console Output](image-10.png)
 ![Class Components vs Functional Components](image-11.png)
+![[1] Spread Operator](image-12.png)
+![[2] Spread Operator](image-13.png)
