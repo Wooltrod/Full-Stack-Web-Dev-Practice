@@ -16,3 +16,4 @@
 ![Class Components vs Functional Components](image-11.png)
 ![[1] Spread Operator](image-12.png)
 ![[2] Spread Operator](image-13.png)
+![Spread Operator with Objects](image-14.png)
