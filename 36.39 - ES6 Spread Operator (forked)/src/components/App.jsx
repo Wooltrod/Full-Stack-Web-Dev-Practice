@@ -10,26 +10,33 @@ function App() {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setContact(prevValue => {
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName,
-          email: prevValue.email
-        };
-      } else if (name === "lName") {
-        return {
-          fName: prevValue.fName,
-          lName: value,
-          email: prevValue.email
-        };
-      } else if (name === "email") {
-        return {
-          fName: prevValue.fName,
-          lName: prevValue.lName,
-          email: value
-        };
-      }
+    // setContact(prevValue => {
+    //   if (name === "fName") {
+    //     return {
+    //       fName: value,
+    //       lName: prevValue.lName,
+    //       email: prevValue.email
+    //     };
+    //   } else if (name === "lName") {
+    //     return {
+    //       fName: prevValue.fName,
+    //       lName: value,
+    //       email: prevValue.email
+    //     };
+    //   } else if (name === "email") {
+    //     return {
+    //       fName: prevValue.fName,
+    //       lName: prevValue.lName,
+    //       email: value
+    //     };
+    //   }
+    // });
+
+    setContact((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: value, //we need to make use of the array syntax for our keys (the imput box name)
+      };
     });
   }
 
