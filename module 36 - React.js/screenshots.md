@@ -17,3 +17,4 @@
 ![[1] Spread Operator](image-12.png)
 ![[2] Spread Operator](image-13.png)
 ![Spread Operator with Objects](image-14.png)
+![Syntax for passing event listeners to child componenets](image-15.png)
