@@ -5,9 +5,19 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
+
+  const [notes, setNotes] = useState([]);
+
+  function addNote(noteObject) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, noteObject];
+    });
+    event.preventDefault();
+  }
+
   return (
     <div>
-      <Header />
+      <Header onAdd={addNote}/>
       <CreateArea />
       <Note key={1} title="Note title" content="Note content" />
       <Footer />
