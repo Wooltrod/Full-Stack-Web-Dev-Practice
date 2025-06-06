@@ -51,7 +51,7 @@ function App() {
 /*--Angela's Solution--*/
 
 function App() {
-  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
 
   function addItem(inputText) {
     setItems(prevItems => {
