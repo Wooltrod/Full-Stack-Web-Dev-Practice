@@ -15,7 +15,7 @@ function InputArea(props) {
 
 import React, { useState } from "react";
 
-function InputArea() {
+function InputArea(props) {
   const [inputText, setInputText] = useState("");
 
   function handleChange(event) {
@@ -26,7 +26,7 @@ function InputArea() {
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} />
-      <button onClick={addItem}>
+      <button onClick={props.onAdd}>
         <span>Add</span>
       </button>
     </div>

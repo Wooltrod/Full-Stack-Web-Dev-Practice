@@ -53,7 +53,7 @@ function App() {
 function App() {
   const [inputText, setInputText] = useState("");
 
-  function addItem() {
+  function addItem(inputText) {
     setItems(prevItems => {
       return [...prevItems, inputText];
     });
@@ -73,7 +73,9 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea />
+      <InputArea
+        onAdd={addItem}
+      />
       <div>
         <ul>
           {items.map((todoItem, index) => (
