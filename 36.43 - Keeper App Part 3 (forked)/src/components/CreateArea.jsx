@@ -31,18 +31,24 @@ function CreateArea(props) {
       <form
         onSubmit={() => {
           props.onAdd(noteObject);
+          setNoteObject({
+            title: "",
+            content: "",
+          });
         }}
       >
         <input
           onChange={handleChange}
           name="title"
           placeholder="Title"
+          value={noteObject.title}
         />
         <textarea
           onChange={handleChange}
           name="content"
           placeholder="Take a note..."
           rows="3"
+          value={noteObject.content}
         />
         <button type="submit">Add</button>
       </form>
