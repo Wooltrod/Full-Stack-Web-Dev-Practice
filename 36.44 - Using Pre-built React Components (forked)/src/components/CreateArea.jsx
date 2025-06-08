@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//Import components from Material UI online
 
 function CreateArea(props) {
   const [note, setNote] = useState({
