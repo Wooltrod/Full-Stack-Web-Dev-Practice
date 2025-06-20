@@ -9,3 +9,4 @@
 ![[5]Setting up Typescript Watch Process](image-8.png)
 ![[6]Setting up Typescript Watch Process](image-9.png)
 ![Typing Objects](image-10.png)
+![Typescrip utility types ('Record')](image-11.png)
